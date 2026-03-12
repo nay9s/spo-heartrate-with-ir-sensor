@@ -1,6 +1,6 @@
 #
 # Automatically generated file. DO NOT EDIT.
-# Espressif IoT Development Framework (ESP-IDF)  Project Configuration
+# Espressif IoT Development Framework (ESP-IDF) 5.1.6 Project Configuration
 #
 CONFIG_SOC_BROWNOUT_RESET_SUPPORTED="Not determined"
 CONFIG_SOC_TWAI_BRP_DIV_SUPPORTED="Not determined"
@@ -350,24 +350,6 @@ CONFIG_PARTITION_TABLE_FILENAME="partitions_singleapp.csv"
 CONFIG_PARTITION_TABLE_OFFSET=0x8000
 CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
-
-#
-# SSD1306 Configuration
-#
-CONFIG_GPIO_RANGE_MAX=33
-CONFIG_I2C_INTERFACE=y
-# CONFIG_SPI_INTERFACE is not set
-# CONFIG_SSD1306_128x32 is not set
-CONFIG_SSD1306_128x64=y
-CONFIG_OFFSETX=0
-# CONFIG_FLIP is not set
-CONFIG_SCL_GPIO=22
-CONFIG_SDA_GPIO=21
-CONFIG_RESET_GPIO=15
-CONFIG_I2C_PORT_0=y
-# CONFIG_I2C_PORT_1 is not set
-# CONFIG_LEGACY_DRIVER is not set
-# end of SSD1306 Configuration
 
 #
 # Compiler options
