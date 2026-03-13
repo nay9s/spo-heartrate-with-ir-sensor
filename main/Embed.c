@@ -26,7 +26,7 @@
 #define REG_SPO2_CONFIG 0x0A
 #define REG_LED1_PA     0x0C
 #define REG_LED2_PA     0x0D
-#define LED_PA          0x1A
+#define LED_PA          0x24
 
 // ── Timing @ 100 SPS ─────────────────────────────────────────────
 #define SETTLE_SAMPLES      500
@@ -62,8 +62,8 @@
 #define BPM_WINDOW       6
 
 // ── SpO2 ──────────────────────────────────────────────────────────
-#define SPO2_A         110.0f
-#define SPO2_B         18.0f
+#define SPO2_A         104.0f
+#define SPO2_B         12.0f
 #define SPO2_MIN_VALID 80.0f
 #define SPO2_MAX_VALID 100.0f
 #define SPO2_R_MIN     0.3f
@@ -71,8 +71,8 @@
 #define SPO2_R_SLOTS   17
 
 // ── Wi-Fi & LINE ─────────────────────────────────────────────────
-#define WIFI_SSID  "Mick"
-#define WIFI_PASS  "Mick190149"
+#define WIFI_SSID  "Sairung_B16"
+#define WIFI_PASS  "690329828"
 #define LINE_TOKEN "+I8fJgVuTpjZvtmxd0c3CgtJpSbAu6AAmqBteZnD9YvsvpvhOXWSBPyaUiHNROEdvcfy3QOBR2g1s/2YByftAxOtDE9HwyEOb2HAz7YlK2Tg6Ean/KowS/uAUl2jGaQNmp/7d+9tyxZ3ADoZ2CDEVgdB04t89/1O/w1cDnyilFU="
 
 static const char *TAG = "HR";
@@ -225,8 +225,12 @@ static void max30102_init(void)
 // ─────────────────────────────────────────────────────────────────
 static void reset_filters(uint32_t ir_seed, uint32_t red_seed)
 {
-    dc_ir=ir_seed; dc_red=red_seed; lp_ir=lp_red=0;
-    sample_count=0; sat_warned=false; motion_count=motion_total=0;
+    dc_ir=ir_seed; 
+    dc_red=red_seed; 
+    lp_ir=lp_red=0;
+    sample_count=0; 
+    sat_warned=false; 
+    motion_count=motion_total=0;
     spo2_sum_ac_red=spo2_sum_dc_red=spo2_sum_ac_ir=spo2_sum_dc_ir=0;
     spo2_n=spo2_r_slot_idx=0;
     for (int i=0;i<SPO2_R_SLOTS;i++) spo2_r_slots[i]=-1.0f;
